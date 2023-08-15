@@ -45,6 +45,6 @@ export async function getFontFaceDeclarations(options: LoaderOptions) {
       variable,
     };
   } catch (error) {
-    throw new Error("Google Fonts couldn't be loaded.");
+    throw new Error(`Google Fonts couldn't be loaded. FontFamily: ${fontFamily} , URL: ${url}`, {cause: error});
   }
 }
